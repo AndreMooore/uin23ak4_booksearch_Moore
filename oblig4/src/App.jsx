@@ -6,6 +6,7 @@ import './App.css'
 
 
 
+
 function App() {
   
 
@@ -13,7 +14,7 @@ function App() {
     <>
       <Layout>
       <Routes>
-          <Route index element={<Home />}/>
+          <Route path="/" element={<Home />}/>
         </Routes>
       </Layout>
 
@@ -21,4 +22,5 @@ function App() {
   )
 }
 
-export default App
+export default App 
+
