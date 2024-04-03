@@ -17,7 +17,7 @@ const getBooks = async()=>{
 
 useEffect(()=>{
   getBooks()
-},[])
+},[searchValue])
 
 
 // useEffect(()=>{
@@ -30,7 +30,7 @@ console.log(books)
 
   return (
     <>
-      <Layout>
+      <Layout setSearchValue={setSearchValue}>
       
         {books?.map((book, index) => {
           return <div className='bookcard'><Bookcard book={book} key={index}/> </div>
