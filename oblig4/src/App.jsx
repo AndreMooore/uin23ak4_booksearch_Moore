@@ -1,8 +1,11 @@
+import './App.css'
+import './styles/main.scss'
 import { useEffect, useState } from 'react'
 import React from 'react'
-import  Layout  from './components/Layout'
-import './App.css'
+import  Bookcards  from './components/Bookcards'
 import Bookcard from './components/Bookcard'
+
+
 
 function App() {
 
@@ -16,27 +19,23 @@ const getBooks = async()=>{
 }
 
 useEffect(()=>{
+  if(searchValue.length > 2){
   getBooks()
+  }
 },[searchValue])
 
-
-// useEffect(()=>{
-//   if(searchValue.length > 2){
-//     getBooks()
-//   }
-// },[searchValue])
 
 console.log(books)
 
   return (
     <>
-      <Layout setSearchValue={setSearchValue}>
+      <Bookcards setSearchValue={setSearchValue} getBooks={getBooks}>
       
         {books?.map((book, index) => {
-          return <div className='bookcard'><Bookcard book={book} key={index}/> </div>
+          return <div className='bookcard' key={index}><Bookcard book={book} key={index}/> </div>
         })}
       
-      </Layout>
+      </Bookcards>
 
     </>
   )

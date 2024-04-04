@@ -5,22 +5,77 @@
     flex-direction: column;
     justify-content: space-between;
 
-    header{
-        display: flex;
-        flex-wrap: wrap;
-        align-items: baseline;
-        justify-content: space-between;
-        nav{
-            display: flex;
-            gap: 2rem;
-            ul{
-                display: flex;
-                flex-wrap: wrap;
-                margin: 0;
-                padding: 0;
-                list-style: none;
-                gap: 1rem;
-            }
-        }
-    }
+   
+}
+
+
+
+input {
+    width: 25%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    width: 5%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+}
+
+#knapp {
+    width: 50%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 10px;
+    padding: 10px;
+   
+    flex-wrap: wrap;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    
+    align-items: center;
+
+}
+
+.bookcard {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 10px;
+    padding: 10px;
+    
+    
+}
+
+.searchbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 10px;
+    padding: 10px;
+   
 }
