@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import React from 'react'
 import  Bookcards  from './components/Bookcards'
 import Bookcard from './components/Bookcard'
+import Searchresults from './components/Searchresults'
 
 
 
@@ -11,13 +12,19 @@ function App() {
 
 const [searchValue, setSearchValue] = useState("james+bond")
 const [books, setBooks] = useState([])
-const getBooks = async()=>{
+const [loading, setLoading] = useState(false)
+const getBooks = async () => {
+  setLoading(true);
   fetch(`https://openlibrary.org/search.json?title=${searchValue}`)
-  .then(response => response.json())
-  .then(data => setBooks(data.docs))
-  .catch(error => console.error(error))
-}
-
+    .then(response => response.json())
+    .then(data => {
+      setBooks(data.docs);
+      setLoading(false);
+    })
+    .catch(error => {
+      setLoading(false);
+    });
+};
 useEffect(()=>{
   if(searchValue.length > 2){
   getBooks()
@@ -29,13 +36,17 @@ console.log(books)
 
   return (
     <>
-      <Bookcards setSearchValue={setSearchValue} getBooks={getBooks}>
+    <h1>Boksøk</h1>
+      <Searchresults setSearchValue={setSearchValue} getBooks={getBooks} />
+      {loading ? <p>Loading...</p> : 
+      <Bookcards >
       
         {books?.map((book, index) => {
           return <div className='bookcard' key={index}><Bookcard book={book} key={index}/> </div>
         })}
       
       </Bookcards>
+      }
 
     </>
   )

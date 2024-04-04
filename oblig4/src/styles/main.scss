@@ -35,9 +35,16 @@ button {
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
-    border: none;
+    border-color: black;
     cursor: pointer;
+   
 }
+
+#knapp:hover {
+    background-color: #267f2b;
+}
+
+
 
 section {
     display: flex;
@@ -45,19 +52,17 @@ section {
     justify-content: space-evenly;
     margin: 10px;
     padding: 10px;
-   
     flex-wrap: wrap;
 }
 
 article {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     margin: 10px;
     padding: 10px;
     border: 1px solid black;
-    
     align-items: center;
+    justify-content: space-between;
 
 }
 
@@ -67,7 +72,17 @@ article {
     justify-content: center;
     margin: 10px;
     padding: 10px;
+    width: 20rem;
     
+    article{
+        p {
+            margin: 0.5rem;
+        }
+        img{
+            width: 10rem;
+            height: 15rem;
+        }
+    }
     
 }
 
