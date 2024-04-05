@@ -3,7 +3,6 @@ import './styles/main.scss'
 import { useEffect, useState } from 'react'
 import React from 'react'
 import  Bookcards  from './components/Bookcards'
-import Bookcard from './components/Bookcard'
 import Searchresults from './components/Searchresults'
 
 
