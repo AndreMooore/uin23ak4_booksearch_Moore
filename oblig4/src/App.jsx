@@ -39,13 +39,7 @@ console.log(books)
     <h1>Boksøk</h1>
       <Searchresults setSearchValue={setSearchValue} getBooks={getBooks} />
       {loading ? <p>Loading...</p> : 
-      <Bookcards >
-      
-        {books?.map((book, index) => {
-          return <div className='bookcard' key={index}><Bookcard book={book} key={index}/> </div>
-        })}
-      
-      </Bookcards>
+      <Bookcards books={books}/>
       }
 
     </>

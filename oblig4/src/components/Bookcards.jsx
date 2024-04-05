@@ -1,11 +1,13 @@
 import React from 'react';
+import Bookcard from './Bookcard';
 
-export default function Layout({children}){
+export default function Bookcards({books}){
 
     return (
         <>
             <section>
-               {children}
+            {books?.map((book, index) => <div className='bookcard' key={index}><Bookcard book={book} key={index}/> </div>
+        )}
             </section>
         </>
     )
