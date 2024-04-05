@@ -7,6 +7,6 @@ return (
         <input type="text" onChange={(e) => setSearchValue(e.target.value)} />
         <button onClick={() => getBooks()}>Søk</button>
         </div>
-            
+             
     </>
 )}
